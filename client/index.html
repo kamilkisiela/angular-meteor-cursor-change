@@ -21,11 +21,17 @@
       Bar
     </p>
   </div>
+  <div>
+    <button ng-click="vm.add('foo');">Add foo</button>
+    <button ng-click="vm.add('bar');">Add bar</button>
+  </div>
   <ul>
     <li ng-repeat="item in vm.items">
       {{item.name}}
       -
       {{item.description}}
+      -
+      {{item.createdAt}}
     </li>
   </ul>
 </body>

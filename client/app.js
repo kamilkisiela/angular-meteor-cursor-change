@@ -20,8 +20,20 @@ function MainCtrl($scope, $reactive) {
       const limit = parseInt(vm.getReactively('limit'));
 
       return (vm.type === 'foo' ? Foo : Bar).find({}, {
-        limit
+        limit,
+        sort: {
+          createdAt: -1
+        }
       });
     }
   });
+
+  vm.add = (type) => {
+    console.log('add:', type);
+    (type === 'foo' ? Foo : Bar).insert({
+      name: Fake.word(),
+      description: Fake.sentence(5),
+      createdAt: new Date()
+    });
+  };
 }

@@ -11,7 +11,8 @@ function fake(what, times) {
   for (var i = 0; i < times; i++) {
     what.insert({
       name: Fake.word(),
-      description: Fake.sentence(5)
+      description: Fake.sentence(5),
+      createdAt: new Date()
     });
   }
 }
