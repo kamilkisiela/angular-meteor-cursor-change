@@ -1,0 +1,31 @@
+<head>
+  <title>Cursors went mad!</title>
+</head>
+<body ng-app="app" ng-controller="MainCtrl as vm">
+  <div>
+    Limit:
+    <select ng-model="vm.limit">
+      <option value="2">2</option>
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+  <div>
+    <p>
+      <input type="radio" ng-model="vm.type" value="foo">
+      Foo
+    </p>
+    <p>
+      <input type="radio" ng-model="vm.type" value="bar">
+      Bar
+    </p>
+  </div>
+  <ul>
+    <li ng-repeat="item in vm.items">
+      {{item.name}}
+      -
+      {{item.description}}
+    </li>
+  </ul>
+</body>
